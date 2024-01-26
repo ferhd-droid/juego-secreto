@@ -1,23 +1,8 @@
-// let titulo = document.querySelector('h1');
-// titulo.textContent = 'Juego del número secreto';
-// asignarTextoElemento();
-// asignarTextoElemento('h1', 'Juego del número secreto');
-
-// let parrafo = document.querySelector('p');
-// parrafo.textContent = 'Indica un número del 1 al 10';
-// asignarTextoElemento('p', 'Indica un número del 1 al 10');
-
 let numeroSecreto = 0;
 let intentos = 1;
 let listaNumerosSorteados = [];
 let maxIntentos = 10;
 
-/*
-function asignarTextoElemento() {
-  let titulo = document.querySelector('h1');
-  titulo.textContent = 'Juego del número secreto';
-}
-*/
 function asignarTextoElemento(elemento, texto) {
   elemento = document.querySelector(elemento);
   // console.log(elemento);
@@ -51,9 +36,6 @@ function deshabilitarBotonNuevoJuego() {
 }
 
 function generarNumeroSecreto() {
-  // let numeroSecreto = Math.floor(Math.random() * 10) + 1;
-  // return numeroSecreto;
-  // return Math.floor(Math.random() * 10) + 1;
   let numeroGenerado = Math.floor(Math.random() * maxIntentos) + 1;
   console.log(numeroGenerado);
   console.log(listaNumerosSorteados);
@@ -88,15 +70,3 @@ function reiniciarJuego() {
 }
 
 condicionesIniciales();
-
-// Tabla de multiplicar
-function tablaMultiplicar(num) {
-  pre = document.createElement("pre");
-  body1 = document.querySelector('body');
-  for(let i = 1; i <= 10; i++) {
-    pre.innerHTML = pre.innerHTML + `${i} x ${num} = ${i * num}` + '<br/>';
-  }
-  body1.appendChild(pre);
-}
-
-// tablaMultiplicar(7);
