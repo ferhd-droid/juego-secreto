@@ -5,14 +5,12 @@ let maxIntentos = 10;
 
 function asignarTextoElemento(elemento, texto) {
   elemento = document.querySelector(elemento);
-  // console.log(elemento);
   elemento.textContent = texto;
 }
 
 function verificarIntento() {
-  // alert('Desde el botón');
   let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
-  // console.log(numeroDeUsuario === numeroSecreto);
+
   if(numeroDeUsuario === numeroSecreto) {
     asignarTextoElemento('p', `Acertaste el número en ${intentos} ${(intentos === 1) ? 'vez':'veces'}`);
     document.getElementById('reiniciar').removeAttribute('disabled');
@@ -37,8 +35,6 @@ function deshabilitarBotonNuevoJuego() {
 
 function generarNumeroSecreto() {
   let numeroGenerado = Math.floor(Math.random() * maxIntentos) + 1;
-  console.log(numeroGenerado);
-  console.log(listaNumerosSorteados);
   // Si ya sorteamos todos los números
   if(listaNumerosSorteados.length == maxIntentos) {
     asignarTextoElemento('p', 'Ya se sortearon todos los números posibles');
